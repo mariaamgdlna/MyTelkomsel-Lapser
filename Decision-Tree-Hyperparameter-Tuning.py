@@ -10,15 +10,6 @@ from sklearn.metrics import (
     roc_curve
 )
 
-def prepare_dataset(df, drop_cols):
-    X = df.drop(
-        columns=[c for c in drop_cols if c in df.columns]
-    )
-
-    y = df["label_lapser"]
-
-    return X, y
-
 def get_drop_columns():
     return [
         "eff_price_mar",
