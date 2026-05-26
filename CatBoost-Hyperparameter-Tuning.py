@@ -1,10 +1,8 @@
 from catboost import CatBoostClassifier
-
 from sklearn.model_selection import (
     GridSearchCV,
     RandomizedSearchCV
 )
-
 from sklearn.metrics import (
     accuracy_score,
     recall_score,
