@@ -1,3 +1,21 @@
+from catboost import CatBoostClassifier
+
+from sklearn.model_selection import (
+    GridSearchCV,
+    RandomizedSearchCV
+)
+
+from sklearn.metrics import (
+    accuracy_score,
+    recall_score,
+    precision_score,
+    f1_score,
+    confusion_matrix,
+    roc_auc_score,
+    roc_curve,
+    ConfusionMatrixDisplay
+)
+
 def train_catboost_baseline(
     X_train,
     y_train,
