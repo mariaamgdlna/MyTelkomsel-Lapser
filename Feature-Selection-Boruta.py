@@ -114,3 +114,17 @@ def save_selected_features(
         index=False,
         engine="openpyxl"
     )
+
+boruta_model = run_boruta_feature_selection(
+    X,
+    y
+)
+
+boruta_results = create_boruta_results(
+    boruta_model,
+    feature_cols
+)
+
+selected_features = get_selected_features(
+    boruta_results
+)
