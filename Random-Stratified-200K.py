@@ -9,7 +9,6 @@ RANDOM_STATE = 42
 random.seed(RANDOM_STATE)
 np.random.seed(RANDOM_STATE)
 
-
 def get_region_distribution(file_path, separator="|"):
     """
     Calculate region distribution from large raw dataset.
@@ -32,7 +31,6 @@ def get_region_distribution(file_path, separator="|"):
     total_rows = sum(region_counts.values())
 
     return header, region_counts, total_rows
-
 
 def build_reservoir_sample(
     file_path,
@@ -119,7 +117,6 @@ def build_reservoir_sample(
 
     return df_buffer, stratify_values, stratify_props
 
-
 def stratified_sampling(
     dataframe,
     stratify_column,
@@ -160,7 +157,6 @@ def stratified_sampling(
 
     return sampled_df
 
-
 def convert_numeric_columns(dataframe, numeric_columns):
     """
     Convert selected columns into numeric datatype.
@@ -174,7 +170,6 @@ def convert_numeric_columns(dataframe, numeric_columns):
             ).fillna(0)
 
     return dataframe
-
 
 NUMERIC_COLUMNS = [
     "rev_dom_jan",
@@ -199,7 +194,6 @@ NUMERIC_COLUMNS = [
     "payload_kb_mar",
     "payload_package_mar"
 ]
-
 
 header, region_counts, total_rows = get_region_distribution(
     FILE_PATH,
