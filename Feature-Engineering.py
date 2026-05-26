@@ -7,7 +7,6 @@ def calculate_mom(current_value, previous_value):
         (previous_value + 1e-9)
     )
 
-
 def calculate_eff_price(revenue, transaction):
 
     return np.where(
@@ -15,7 +14,6 @@ def calculate_eff_price(revenue, transaction):
         0,
         revenue / (transaction + 1e-9)
     )
-
 
 def create_delta_features(df):
 
@@ -46,7 +44,6 @@ def create_delta_features(df):
 
     return df
 
-
 def create_mom_features(df):
 
     df["mom_rev_dom"] = calculate_mom(
@@ -71,7 +68,6 @@ def create_mom_features(df):
 
     return df
 
-
 def create_average_features(df):
 
     df["avg_rev_dom"] = (
@@ -90,7 +86,6 @@ def create_average_features(df):
     ) / 2
 
     return df
-
 
 def create_broadband_share_features(df):
 
@@ -115,7 +110,6 @@ def create_broadband_share_features(df):
 
     return df
 
-
 def create_activity_features(df):
 
     df["bulan_aktif_janfeb"] = (
@@ -129,7 +123,6 @@ def create_activity_features(df):
     )
 
     return df
-
 
 def create_eff_price_features(df):
 
@@ -155,7 +148,6 @@ def create_eff_price_features(df):
 
     return df
 
-
 def create_los_features(df):
 
     df["los_group"] = pd.cut(
@@ -176,7 +168,6 @@ def create_los_features(df):
 
     return df
 
-
 def create_business_flags(df):
 
     df["loyal_tapi_turun"] = (
@@ -190,7 +181,6 @@ def create_business_flags(df):
     ).astype(int)
 
     return df
-
 
 def get_feature_columns():
 
@@ -241,7 +231,6 @@ def get_feature_columns():
         "loyal_tapi_turun",
         "baru_tidak_konsisten"
     ]
-
 
 def prepare_model_data(df):
 
