@@ -70,18 +70,3 @@ def calculate_eff_price(revenue, transaction):
         0,
         revenue / (transaction + 1e-9)
     )
-
-
-# =========================
-# MAIN PROCESS
-# =========================
-
-INPUT_PATH = "Output_New_Sample_200k_Clean.xlsx"
-
-df = load_data(INPUT_PATH)
-
-df = parse_purchase_flags(df)
-
-df = encode_los_segment(df)
-
-df = create_lapser_label(df)
