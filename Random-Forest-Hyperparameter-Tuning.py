@@ -1,3 +1,20 @@
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import (
+    GridSearchCV,
+    RandomizedSearchCV,
+    validation_curve
+)
+from sklearn.metrics import (
+    accuracy_score,
+    recall_score,
+    precision_score,
+    f1_score,
+    confusion_matrix,
+    roc_auc_score,
+    roc_curve,
+    ConfusionMatrixDisplay
+)
+
 def build_random_forest_baseline(random_state=42):
     model = RandomForestClassifier(
         n_estimators=100,
