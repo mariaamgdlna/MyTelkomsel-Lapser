@@ -1,8 +1,3 @@
-def prepare_dataset(df, drop_cols, label_col="label_lapser"):
-    X = df.drop(columns=[c for c in drop_cols if c in df.columns])
-    y = df[label_col]
-    return X, y
-
 def train_catboost_baseline(
     X_train,
     y_train,
