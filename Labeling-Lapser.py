@@ -1,7 +1,6 @@
 def load_data(file_path):
     return pd.read_excel(file_path)
 
-
 def parse_purchase_flags(df):
     for i, month in enumerate(["jan", "feb", "mar"]):
         df[f"flag_{month}"] = (
@@ -11,7 +10,6 @@ def parse_purchase_flags(df):
         )
 
     return df
-
 
 def encode_los_segment(df):
 
@@ -39,7 +37,6 @@ def encode_los_segment(df):
 
     return df
 
-
 def create_lapser_label(df):
 
     df["label_lapser"] = (
@@ -47,7 +44,6 @@ def create_lapser_label(df):
     ).astype(int)
 
     return df
-
 
 def calculate_mom(current_value, previous_value):
 
@@ -57,7 +53,6 @@ def calculate_mom(current_value, previous_value):
         (current_value - previous_value) /
         (previous_value + 1e-9)
     )
-
 
 def calculate_eff_price(revenue, transaction):
 
